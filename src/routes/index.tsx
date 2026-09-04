@@ -233,7 +233,7 @@ function Index() {
             Öğrenciler için, öğrencilerle birlikte.
           </h2>
           <a
-            href="#"
+            href="/hakkimizda"
             className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:opacity-70"
           >
             Hakkımızda <ArrowRight className="h-4 w-4" />
@@ -313,7 +313,7 @@ function Index() {
         <div className="mt-4 flex flex-wrap items-end justify-between gap-4">
           <h2 className="text-4xl font-extrabold text-foreground">Takvimde neler var?</h2>
           <a
-            href="#"
+            href="/etkinlikler"
             className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:opacity-70"
           >
             Tüm Etkinlikler <ArrowRight className="h-4 w-4" />

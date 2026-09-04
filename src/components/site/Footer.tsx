@@ -1,18 +1,37 @@
-import { Github, Instagram, Youtube, MessageCircle } from "lucide-react";
+import { Github, Instagram, Youtube, MessageCircle, Cookie } from "lucide-react";
 import logo from "@/assets/logd-logo.png.asset.json";
+import { openCookieSettings } from "@/components/site/CookieConsent";
 
 const COLUMNS = [
   {
-    title: "Keşfet",
-    links: ["Topluluk", "Projeler", "Oyunlar", "Etkinlikler", "Haberler"],
+    title: "KEŞFET",
+    links: [
+      { label: "Topluluk", href: "/#topluluk" },
+      { label: "Projeler", href: "/projeler" },
+      { label: "Oyunlar", href: "/projeler" },
+      { label: "Etkinlikler", href: "/etkinlikler" },
+      { label: "Haberler", href: "/haberler" },
+    ],
   },
   {
-    title: "Kaynaklar",
-    links: ["Rehberler", "Videolar", "Araçlar", "Eğitimler", "Blog"],
+    title: "KAYNAKLAR",
+    links: [
+      { label: "Kaynaklar", href: "/#kaynaklar" },
+      { label: "Videolar", href: "#" },
+      { label: "Araçlar", href: "#" },
+      { label: "Eğitimler", href: "#" },
+      { label: "Blog", href: "#" },
+    ],
   },
   {
     title: "LOGD",
-    links: ["Hakkımızda", "Ekibimiz", "Kariyer", "İletişim", "Gizlilik Politikası"],
+    links: [
+      { label: "Hakkımızda", href: "/hakkimizda" },
+      { label: "Ekibimiz", href: "/hakkimizda#ekibimiz" },
+      { label: "Gizlilik Politikası", href: "/gizlilik-politikasi" },
+      { label: "KVKK Metni", href: "/kvkk" },
+      { label: "Çerez Politikası", href: "/cerez-politikasi" },
+    ],
   },
 ];
 
@@ -22,7 +41,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1240px] px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.2fr]">
           <div>
-            <div className="flex items-center gap-3">
+            <a href="/" className="flex items-center gap-3">
               <img
                 src={logo.url}
                 alt="LOGD logosu"
@@ -32,19 +51,19 @@ export function Footer() {
                 className="h-10 w-10 rounded-lg"
               />
               <span className="text-lg font-extrabold">LOGD</span>
-            </div>
+            </a>
             <p className="mt-3 max-w-[220px] text-sm text-cream/60">
-              Liseli Oyun Geliştiricileri Derneği
+              Liseler Oyun Geliştiricileri Derneği
             </p>
             <div className="mt-6 flex items-center gap-4 text-cream/70">
-              <a href="#" aria-label="Discord" className="transition-colors hover:text-cream">
-                <MessageCircle className="h-[18px] w-[18px]" />
-              </a>
               <a href="#" aria-label="Instagram" className="transition-colors hover:text-cream">
                 <Instagram className="h-[18px] w-[18px]" />
               </a>
               <a href="#" aria-label="YouTube" className="transition-colors hover:text-cream">
                 <Youtube className="h-[18px] w-[18px]" />
+              </a>
+              <a href="#" aria-label="Discord" className="transition-colors hover:text-cream">
+                <MessageCircle className="h-[18px] w-[18px]" />
               </a>
               <a href="#" aria-label="GitHub" className="transition-colors hover:text-cream">
                 <Github className="h-[18px] w-[18px]" />
@@ -58,13 +77,13 @@ export function Footer() {
                 {col.title}
               </h3>
               <ul className="mt-4 space-y-2.5">
-                {col.links.map((l) => (
-                  <li key={l}>
+                {col.links.map((item) => (
+                  <li key={item.label}>
                     <a
-                      href="#"
+                      href={item.href}
                       className="text-sm text-cream/75 transition-colors hover:text-cream"
                     >
-                      {l}
+                      {item.label}
                     </a>
                   </li>
                 ))}
@@ -74,7 +93,7 @@ export function Footer() {
 
           <div>
             <h3 className="text-[11px] font-bold uppercase tracking-[0.14em] text-cream/50">
-              İletişim
+              İLETİŞİM
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm text-cream/75">
               <li>
@@ -82,14 +101,36 @@ export function Footer() {
                   info@logd.org.tr
                 </a>
               </li>
-              <li>Liseler İçin Geliştiricilerin Derneği</li>
+              <li>Liseler Oyun Geliştiricileri Derneği</li>
               <li>Türkiye</li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-14 border-t border-cream/10 pt-6">
-          <p className="text-xs text-cream/50">© 2024 LOGD. Tüm hakları saklıdır.</p>
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-6 text-xs text-cream/60 sm:flex-row">
+          <p>© 2024 - 2025 Liseler Oyun Geliştiricileri Derneği (LOGD). Tüm hakları saklıdır.</p>
+          <div className="flex flex-wrap items-center gap-3.5 text-xs text-cream/70">
+            <a href="/gizlilik-politikasi" className="transition-colors hover:text-cream">
+              Gizlilik Politikası
+            </a>
+            <span className="text-cream/30">•</span>
+            <a href="/kvkk" className="transition-colors hover:text-cream">
+              KVKK
+            </a>
+            <span className="text-cream/30">•</span>
+            <a href="/cerez-politikasi" className="transition-colors hover:text-cream">
+              Çerezler
+            </a>
+            <span className="text-cream/30">•</span>
+            <button
+              type="button"
+              onClick={openCookieSettings}
+              className="inline-flex items-center gap-1 text-cream/80 transition-colors hover:text-cream underline-offset-2 hover:underline"
+            >
+              <Cookie className="h-3 w-3" />
+              Çerez Tercihleri
+            </button>
+          </div>
         </div>
       </div>
     </footer>

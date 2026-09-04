@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { CookieConsent } from "../components/site/CookieConsent";
 
 function NotFoundComponent() {
   return (
@@ -77,23 +78,40 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "LOGD | Liseli Oyun Geliştiricileri Derneği" },
+      { title: "LOGD | Liseler Oyun Geliştiricileri Derneği (Kütük No: 35-089-005)" },
       {
         name: "description",
         content:
-          "Liseli oyun geliştiricilerinin topluluğu: projeler, etkinlikler, kaynaklar ve fırsatlar.",
+          "Liseler Oyun Geliştiricileri Derneği (LOGD): Lise öğrencilerine yönelik ücretsiz oyun geliştirme atölyeleri, Anatolia Game Jam, lise kulüp ağı ve mentorluk sağlayan resmî sivil toplum kuruluşu.",
       },
-      { name: "author", content: "LOGD" },
-      { property: "og:title", content: "LOGD | Liseli Oyun Geliştiricileri Derneği" },
+      {
+        name: "keywords",
+        content:
+          "LOGD, Liseler Oyun Geliştiricileri Derneği, dernek kütük 35-089-005, lise oyun geliştirme, game jam, lise bilişim kulüpleri, genç oyun geliştiriciler, Unity, Godot, Unreal Engine",
+      },
+      { name: "author", content: "Liseler Oyun Geliştiricileri Derneği" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "theme-color", content: "#0e0a24" },
+      { property: "og:site_name", content: "LOGD - Liseler Oyun Geliştiricileri Derneği" },
+      { property: "og:locale", content: "tr_TR" },
+      { property: "og:title", content: "LOGD | Liseler Oyun Geliştiricileri Derneği" },
       {
         property: "og:description",
         content:
-          "Liseli oyun geliştiricilerinin topluluğu: projeler, etkinlikler, kaynaklar ve fırsatlar.",
+          "Liseli gençlerin oyun geliştirme ve dijital üretim yolculuğu: Ücretsiz Game Jam'ler, eğitimler, okul kulüpleri ve mentorluk.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://logd.org.tr" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "LOGD | Liseler Oyun Geliştiricileri Derneği" },
+      {
+        name: "twitter:description",
+        content:
+          "Liseli oyun geliştiricilerinin resmî sivil toplum kuruluşu: projeler, Anatolia Game Jam, eğitimler ve fırsatlar.",
+      },
     ],
     links: [
+      { rel: "canonical", href: "https://logd.org.tr" },
       {
         rel: "stylesheet",
         href: appCss,
@@ -114,10 +132,91 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["NGO", "Organization"],
+        "@id": "https://logd.org.tr/#organization",
+        "name": "Liseler Oyun Geliştiricileri Derneği",
+        "alternateName": "LOGD",
+        "legalName": "Liseler Oyun Geliştiricileri Derneği",
+        "url": "https://logd.org.tr",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://logd.org.tr/favicon.png",
+          "caption": "LOGD - Liseler Oyun Geliştiricileri Derneği Logosu",
+        },
+        "identifier": "35-089-005",
+        "taxID": "35-089-005",
+        "description":
+          "Liseler Oyun Geliştiricileri Derneği (LOGD), lise çağındaki gençlerin oyun geliştirme, yazılım, dijital sanat ve yapay zekâ alanlarında yetkinlik kazanmasını sağlayan kütük numarası 35-089-005 olan kâr amacı gütmeyen resmî bir sivil toplum kuruluşudur.",
+        "foundingDate": "2018",
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "İzmir, Türkiye",
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Konak",
+          "addressRegion": "İzmir",
+          "addressCountry": "TR",
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+90-232-483-3500",
+            "contactType": "Dernek Genel Sekreterliği",
+            "email": "info@logd.org.tr",
+            "availableLanguage": ["Turkish", "English"],
+          },
+          {
+            "@type": "ContactPoint",
+            "email": "kvkk@logd.org.tr",
+            "contactType": "KVKK ve Veri Koruma İrtibatı",
+            "availableLanguage": ["Turkish"],
+          },
+        ],
+        "sameAs": [
+          "https://www.instagram.com/logdresmi/",
+          "https://discord.gg/logd",
+          "https://github.com/logd-org",
+          "https://www.youtube.com/@logdresmi",
+          "https://x.com/logdresmi",
+        ],
+        "knowsAbout": [
+          "Oyun Geliştirme",
+          "Game Jam",
+          "Lise Bilişim Kulüpleri",
+          "Unity",
+          "Unreal Engine",
+          "Godot Engine",
+          "Dijital Sanat ve Modelleme",
+          "Oyun Sektörü Kariyer Rehberliği",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://logd.org.tr/#website",
+        "url": "https://logd.org.tr",
+        "name": "LOGD - Liseler Oyun Geliştiricileri Derneği",
+        "description": "Lise öğrencileri için kâr amacı gütmeyen oyun geliştirme topluluğu ve sivil toplum kuruluşu.",
+        "publisher": {
+          "@id": "https://logd.org.tr/#organization",
+        },
+        "inLanguage": "tr-TR",
+      },
+    ],
+  };
+
   return (
-    <html lang="en">
+    <html lang="tr">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
       </head>
       <body>
         {children}
@@ -134,6 +233,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <CookieConsent />
     </QueryClientProvider>
   );
 }

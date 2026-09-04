@@ -2,19 +2,22 @@ import { useEffect, useState } from "react";
 import { Globe, Search, Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logd-logo.png.asset.json";
 
+interface HeaderProps {
+  activeNav?: string;
+}
+
 const NAV = [
-  { label: "Topluluk", href: "#topluluk" },
-  { label: "Projeler", href: "#projeler" },
-  { label: "Oyunlar", href: "#projeler" },
-  { label: "Etkinlikler", href: "#etkinlikler" },
-  { label: "Haberler", href: "#haberler" },
-  { label: "Kaynaklar", href: "#kaynaklar" },
-  { label: "Hakkımızda", href: "#hakkimizda" },
+  { label: "Ana Sayfa", href: "/" },
+  { label: "Hakkımızda", href: "/hakkimizda" },
+  { label: "Etkinlikler", href: "/etkinlikler" },
+  { label: "Showcase", href: "/projeler" },
+  { label: "Haberler", href: "/haberler" },
+  { label: "İletişim", href: "/iletisim" },
 ];
 
 const LANGS = ["Türkçe", "English", "Deutsch"];
 
-export function Header() {
+export function Header({ activeNav }: HeaderProps) {
   const [langOpen, setLangOpen] = useState(false);
   const [lang, setLang] = useState("TR");
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -29,7 +32,7 @@ export function Header() {
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <div className="mx-auto flex h-20 max-w-[1240px] items-center justify-between px-6">
-        <a href="#" className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3">
           <img
             src={logo.url}
             alt="LOGD logosu"
@@ -41,15 +44,25 @@ export function Header() {
         </a>
 
         <nav className="hidden items-center gap-7 lg:flex">
-          {NAV.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="text-sm font-medium text-cream/80 transition-colors hover:text-cream"
-            >
-              {item.label}
-            </a>
-          ))}
+          {NAV.map((item) => {
+            const isActive = activeNav === item.label;
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                className={
+                  isActive
+                    ? "relative pb-1 text-sm font-semibold text-cream"
+                    : "text-sm font-medium text-cream/80 transition-colors hover:text-cream"
+                }
+              >
+                {item.label}
+                {isActive && (
+                  <span className="absolute inset-x-0 -bottom-1 h-0.5 rounded-full bg-cream" />
+                )}
+              </a>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -73,7 +86,7 @@ export function Header() {
               <ChevronDown className="h-3.5 w-3.5 opacity-70" />
             </button>
             {langOpen && (
-              <div className="absolute right-0 mt-2 w-36 overflow-hidden rounded-md border border-border bg-card py-1 shadow-lg">
+              <div className="absolute right-0 mt-2 w-36 overflow-hidden rounded-md border border-cream/20 bg-navy-deep py-1 shadow-2xl backdrop-blur-md">
                 {LANGS.map((l) => (
                   <button
                     key={l}
@@ -81,7 +94,7 @@ export function Header() {
                       setLang(l === "Türkçe" ? "TR" : l === "English" ? "EN" : "DE");
                       setLangOpen(false);
                     }}
-                    className="block w-full px-4 py-2 text-left text-sm text-foreground transition-colors hover:bg-secondary"
+                    className="block w-full px-4 py-2 text-left text-sm text-cream/90 transition-colors hover:bg-cream/15 hover:text-cream"
                   >
                     {l}
                   </button>
@@ -89,13 +102,6 @@ export function Header() {
               </div>
             )}
           </div>
-
-          <a
-            href="#katil"
-            className="hidden h-10 items-center rounded-md bg-cream px-5 text-sm font-semibold text-navy transition-opacity hover:opacity-90 sm:flex"
-          >
-            LOGD'ye Katıl
-          </a>
 
           <button
             aria-label="Menü"
@@ -120,12 +126,6 @@ export function Header() {
                 {item.label}
               </a>
             ))}
-            <a
-              href="#katil"
-              className="mt-2 rounded-md bg-cream px-3 py-2.5 text-center text-sm font-semibold text-navy"
-            >
-              LOGD'ye Katıl
-            </a>
           </nav>
         </div>
       )}
