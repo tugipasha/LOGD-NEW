@@ -9,7 +9,9 @@ import {
   CheckCircle2,
   X,
   ChevronRight,
+  MapPin,
   Sparkles,
+  Users,
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
