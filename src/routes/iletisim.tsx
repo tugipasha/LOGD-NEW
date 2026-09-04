@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import contactHeroArtwork from "@/assets/images/contact_hero_3d_info_1788552429519.jpg";
 
 export const Route = createFileRoute("/iletisim")({
   head: () => ({
@@ -108,15 +107,11 @@ function IletisimPage() {
       <Header activeNav="İletişim" />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#120e2e] via-[#151037] to-[#120e2c] pt-28 pb-16 text-cream sm:pt-32 sm:pb-20">
-        {/* Subtle grid pattern */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`,
-            backgroundSize: "28px 28px",
-          }}
-        />
+      <section
+        className="relative overflow-hidden bg-[#120e2e] bg-cover bg-right-center bg-no-repeat pt-28 pb-16 text-cream sm:pt-32 sm:pb-20"
+        style={{ backgroundImage: "url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iletisim-dxSuIpSuaL3eCO8wno7CYwdyaJWASv.png)" }}
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[#120e2e]/55" />
 
         <div className="relative mx-auto max-w-[1240px] px-6">
           {/* Breadcrumb */}
@@ -176,17 +171,6 @@ function IletisimPage() {
               </div>
             </div>
 
-            {/* Right 3D Isometric Artwork */}
-            <div className="relative flex items-center justify-center">
-              <div className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-white/10 to-white/5 p-2 shadow-2xl backdrop-blur-sm transition-transform duration-300 hover:scale-[1.01]">
-                <img
-                  src={contactHeroArtwork}
-                  alt="LOGD İletişim 3D Sanatı"
-                  className="h-auto w-full rounded-2xl object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>
