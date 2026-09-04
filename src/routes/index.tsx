@@ -186,23 +186,6 @@ function Index() {
               </a>
             </div>
 
-            <div className="mt-10 flex items-center gap-4">
-              <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <span
-                    key={i}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-navy-deep bg-cream/85 text-xs font-bold text-navy"
-                  >
-                    {String.fromCharCode(64 + i * 3)}
-                  </span>
-                ))}
-              </div>
-              <p className="text-xs leading-snug text-cream/65">
-                Türkiye'nin dört bir yanından
-                <br />
-                binlerce lise öğrencisi.
-              </p>
-            </div>
           </div>
         </div>
       </section>

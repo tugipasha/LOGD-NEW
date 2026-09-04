@@ -1,8 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Users,
-  Trophy,
   MessageSquare,
   ArrowRight,
   Send,
@@ -143,32 +141,6 @@ function IletisimPage() {
                 Sorularınız, iş birlikleri veya önerileriniz için ekibimiz her zaman sizinle.
               </p>
 
-              {/* Stats / Badges Row */}
-              <div className="mt-8 flex flex-wrap items-center gap-6 sm:gap-10 border-t border-white/10 pt-6">
-                {/* Stat 1: 18K+ Topluluk Üyesi */}
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-sand shadow-inner">
-                    <Users className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <div className="text-xl font-black text-cream leading-tight">18K+</div>
-                    <div className="text-xs font-medium text-cream/70">Topluluk Üyesi</div>
-                  </div>
-                </div>
-
-                {/* Stat 2: 300+ Gerçekleştirilen Etkinlik */}
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-sand shadow-inner">
-                    <Trophy className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <div className="text-xl font-black text-cream leading-tight">300+</div>
-                    <div className="text-xs font-medium text-cream/70">
-                      Gerçekleştirilen Etkinlik
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
           </div>
@@ -180,7 +152,7 @@ function IletisimPage() {
         {/* SECTION: Bize mesaj gönderin Form */}
         <section className="mb-16 sm:mb-20">
           <div className="overflow-hidden rounded-3xl border border-border/80 bg-card p-6 shadow-sm sm:p-8 lg:p-10">
-            <div className="grid items-center gap-8 lg:grid-cols-[1.25fr_0.75fr]">
+            <div className="grid items-center gap-8">
               {/* Form Column */}
               <div>
                 <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
@@ -319,16 +291,6 @@ function IletisimPage() {
                     </div>
                   </form>
                 )}
-              </div>
-
-              {/* Right Illustration Column - Sade ve estetik GIF animasyonu */}
-              <div className="relative flex items-center justify-center overflow-hidden rounded-2xl bg-[#f5f3ff] p-4 lg:p-6">
-                <img
-                  src="/contact-message.gif"
-                  alt="Mesaj İletişim Animasyonu"
-                  className="h-auto w-full max-w-sm rounded-xl object-contain drop-shadow-sm"
-                  referrerPolicy="no-referrer"
-                />
               </div>
             </div>
           </div>
