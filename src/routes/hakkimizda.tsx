@@ -24,7 +24,6 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import logo from "@/assets/logd-logo.png.asset.json";
 
-import heroIsometricImg from "@/assets/images/about_hero_isometric_1788546977287.jpg";
 import ahmetImg from "@/assets/images/team_ahmet_1788547015900.jpg";
 import zeynepImg from "@/assets/images/team_zeynep_1788547038479.jpg";
 import mertcanImg from "@/assets/images/team_mertcan_1788547060404.jpg";
@@ -189,10 +188,11 @@ function HakkimizdaPage() {
       <Header activeNav="Hakkımızda" />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-navy-deep text-cream">
-        {/* Subtle background ambient overlay */}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,oklch(0.38_0.11_288/0.45),transparent_70%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,oklch(0.28_0.09_288/0.6),transparent_65%)]" />
+      <section
+        className="relative overflow-hidden bg-navy-deep bg-cover bg-right-center bg-no-repeat text-cream"
+        style={{ backgroundImage: "url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hakkinda-YzN4DBeMwyzv91gDeOaXczc9XVP1ZI.png)" }}
+      >
+        <div className="pointer-events-none absolute inset-0 bg-navy-deep/55" />
 
         <div className="relative mx-auto max-w-[1240px] px-6 pb-20 pt-32 sm:pb-24 sm:pt-36">
           {/* Breadcrumbs */}
@@ -238,17 +238,6 @@ function HakkimizdaPage() {
               </div>
             </div>
 
-            {/* Right: 3D Isometric Art */}
-            <div className="relative flex items-center justify-center lg:justify-end">
-              <div className="relative w-full max-w-[500px] overflow-hidden rounded-2xl border border-cream/10 bg-navy/40 p-2 shadow-2xl backdrop-blur-sm">
-                <img
-                  src={heroIsometricImg}
-                  alt="LOGD 3D İzometrik Oyun Geliştirme İllüstrasyonu"
-                  referrerPolicy="no-referrer"
-                  className="h-auto w-full rounded-xl object-contain"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>

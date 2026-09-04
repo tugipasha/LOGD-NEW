@@ -18,7 +18,6 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 
 // Local assets
-import newsHeroArtwork from "@/assets/images/news_hero_setup_1788553264416.jpg";
 import newsGamejamStageArtwork from "@/assets/images/news_gamejam_stage_1788553284412.jpg";
 import pixelArtArtwork from "@/assets/images/event_pixel_art_1788550843151.jpg";
 import mentoringArtwork from "@/assets/images/event_mentoring_thumb_1788550908613.jpg";
@@ -246,22 +245,14 @@ function HaberlerPage() {
       <Header activeNav="Haberler" />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#0e0a24] via-[#120e2e] to-[#0c0920] pt-28 pb-16 text-cream sm:pt-32 sm:pb-20">
-        {/* Subtle grid pattern */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`,
-            backgroundSize: "28px 28px",
-          }}
-        />
-
-        {/* Ambient glow */}
-        <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-navy/40 blur-3xl" />
-        <div className="pointer-events-none absolute -right-20 top-20 h-80 w-80 rounded-full bg-purple-900/30 blur-3xl" />
+      <section
+        className="relative overflow-hidden bg-[#0e0a24] bg-cover bg-right-center bg-no-repeat pt-28 pb-16 text-cream sm:pt-32 sm:pb-20"
+        style={{ backgroundImage: "url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/haberler-MlmIfE3W6fjsviXLOEIKixbVutm4bu.png)" }}
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[#0e0a24]/55" />
 
         <div className="relative mx-auto max-w-[1240px] px-6">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+          <div className="max-w-2xl">
             {/* Left Content */}
             <div>
               {/* Breadcrumb */}
@@ -294,17 +285,6 @@ function HaberlerPage() {
               </p>
             </div>
 
-            {/* Right Hero Image (Exact matching Game Jam desk setup) */}
-            <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-2 shadow-2xl backdrop-blur-sm">
-                <img
-                  src={newsHeroArtwork}
-                  alt="LOGD Game Jam Oyun Geliştirme Çalışma Alanı"
-                  className="h-auto w-full rounded-2xl object-cover shadow-inner"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>

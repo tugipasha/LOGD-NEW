@@ -17,7 +17,6 @@ import {
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import {
-  eventsHeroIsometric,
   HERO_STATS,
   UPCOMING_EVENTS,
   PAST_EVENTS,
@@ -71,15 +70,11 @@ function EtkinliklerPage() {
       <Header activeNav="Etkinlikler" />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#120e2e] via-[#151037] to-[#120e2c] pt-28 pb-16 text-cream sm:pt-32 sm:pb-20">
-        {/* Subtle grid background overlay */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`,
-            backgroundSize: "28px 28px",
-          }}
-        />
+      <section
+        className="relative overflow-hidden bg-[#120e2e] bg-cover bg-right-center bg-no-repeat pt-28 pb-16 text-cream sm:pt-32 sm:pb-20"
+        style={{ backgroundImage: "url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/etkinlikler-NZXXYrxahwKuliabeMGOWmWsBsx3FB.png)" }}
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[#120e2e]/55" />
 
         <div className="relative mx-auto max-w-[1240px] px-6">
           {/* Breadcrumb */}
@@ -135,17 +130,6 @@ function EtkinliklerPage() {
               </div>
             </div>
 
-            {/* Right 3D Isometric Artwork */}
-            <div className="relative flex items-center justify-center">
-              <div className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-white/10 to-white/5 p-2 shadow-2xl backdrop-blur-sm transition-transform duration-300 hover:scale-[1.01]">
-                <img
-                  src={eventsHeroIsometric}
-                  alt="LOGD Etkinlikler 3D İllüstrasyonu"
-                  className="h-auto w-full rounded-2xl object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>

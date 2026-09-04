@@ -126,10 +126,11 @@ function ProjelerShowcasePage() {
       <Header activeNav="Oyunlar" />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#131127] text-cream">
-        {/* Ambient background glows */}
-        <div className="pointer-events-none absolute -left-40 top-0 h-[480px] w-[480px] rounded-full bg-navy/40 blur-[130px]" />
-        <div className="pointer-events-none absolute -right-20 top-1/4 h-[480px] w-[480px] rounded-full bg-[#2d1b69]/30 blur-[140px]" />
+      <section
+        className="relative overflow-hidden bg-[#131127] bg-cover bg-right-center bg-no-repeat text-cream"
+        style={{ backgroundImage: "url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/showcase-MQaR8kxMzo3URT4IFVKmuNgJxjbAz1.png)" }}
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[#131127]/55" />
 
         <div className="relative mx-auto max-w-[1240px] px-6 pb-16 pt-24 sm:pb-20 sm:pt-32">
           <div className="max-w-3xl">
