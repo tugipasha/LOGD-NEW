@@ -20,11 +20,10 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
+    if (!langOpen) return;
     const close = () => setLangOpen(false);
-    if (langOpen) {
-      window.addEventListener("click", close);
-      return () => window.removeEventListener("click", close);
-    }
+    window.addEventListener("click", close);
+    return () => window.removeEventListener("click", close);
   }, [langOpen]);
 
   return (
