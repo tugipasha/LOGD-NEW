@@ -2,9 +2,6 @@ import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Calendar,
-  Users,
-  MapPin,
-  Trophy,
   Clock,
   ArrowRight,
   ChevronDown,
@@ -17,7 +14,6 @@ import {
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import {
-  HERO_STATS,
   UPCOMING_EVENTS,
   PAST_EVENTS,
   EXTRA_PAST_EVENTS,
@@ -109,25 +105,6 @@ function EtkinliklerPage() {
                 bıraktık. Tüm etkinliklerimize göz atın.
               </p>
 
-              {/* Stats Row */}
-              <div className="mt-8 flex flex-wrap items-center gap-6 sm:gap-10 border-t border-white/10 pt-6">
-                {HERO_STATS.map((stat) => (
-                  <div key={stat.label} className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-sand shadow-inner">
-                      {stat.icon === "calendar" && <Calendar className="h-5 w-5" />}
-                      {stat.icon === "users" && <Users className="h-5 w-5" />}
-                      {stat.icon === "map-pin" && <MapPin className="h-5 w-5" />}
-                      {stat.icon === "trophy" && <Trophy className="h-5 w-5" />}
-                    </div>
-                    <div>
-                      <div className="text-xl font-black text-cream leading-tight">
-                        {stat.value}
-                      </div>
-                      <div className="text-xs font-medium text-cream/70">{stat.label}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
 
           </div>
