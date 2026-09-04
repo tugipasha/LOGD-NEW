@@ -130,7 +130,7 @@ function ProjelerShowcasePage() {
         className="page-hero relative bg-[#131127] text-cream"
         style={{ backgroundImage: "url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/showcase-MQaR8kxMzo3URT4IFVKmuNgJxjbAz1.png)" }}
       >
-        <div className="pointer-events-none absolute inset-0 bg-[#131127]/55" />
+        <div className="pointer-events-none absolute inset-0 bg-[#131127]/20" />
 
         <div className="relative z-10 mx-auto max-w-[1240px] px-6 pb-16 pt-24 sm:pb-20 sm:pt-32">
           <div className="max-w-3xl">

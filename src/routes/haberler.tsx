@@ -249,7 +249,7 @@ function HaberlerPage() {
         className="page-hero relative bg-[#0e0a24] pt-28 pb-16 text-cream sm:pt-32 sm:pb-20"
         style={{ backgroundImage: "url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/haberler-MlmIfE3W6fjsviXLOEIKixbVutm4bu.png)" }}
       >
-        <div className="pointer-events-none absolute inset-0 bg-[#0e0a24]/55" />
+        <div className="pointer-events-none absolute inset-0 bg-[#0e0a24]/20" />
 
         <div className="relative z-10 mx-auto max-w-[1240px] px-6">
           <div className="max-w-2xl">
