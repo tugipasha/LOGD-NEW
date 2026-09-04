@@ -15,9 +15,9 @@ import {
 
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { TurkiyeMap } from "@/components/site/TurkiyeMap";
 import heroBg from "@/assets/hero-bg.png.asset.json";
 import logo from "@/assets/logd-logo.png.asset.json";
-import trMap from "@/assets/turkiye-map.png.asset.json";
 import p1 from "@/assets/project-1.jpg.asset.json";
 import p2 from "@/assets/project-2.jpg.asset.json";
 import p3 from "@/assets/project-3.jpg.asset.json";
@@ -389,16 +389,9 @@ function Index() {
           </div>
 
           <div className="relative">
-            <img
-              src={trMap.url}
-              alt="Türkiye haritası üzerinde topluluk üyelerinin dağılımı"
-              width={1200}
-              height={560}
-              loading="lazy"
-              className="w-full"
-            />
+            <TurkiyeMap />
             <p className="mt-2 flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground">
-              <MapPin className="h-3.5 w-3.5" /> 81 il · Onlarca Okul
+              <MapPin className="h-3.5 w-3.5" /> İzmir · Uşak · Aydın merkezli, 81 ilde topluluk
             </p>
           </div>
         </div>
