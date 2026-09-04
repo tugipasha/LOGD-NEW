@@ -189,12 +189,12 @@ function HakkimizdaPage() {
 
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden bg-navy-deep bg-cover bg-right-center bg-no-repeat text-cream"
+        className="page-hero relative bg-navy-deep text-cream"
         style={{ backgroundImage: "url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hakkinda-YzN4DBeMwyzv91gDeOaXczc9XVP1ZI.png)" }}
       >
         <div className="pointer-events-none absolute inset-0 bg-navy-deep/55" />
 
-        <div className="relative mx-auto max-w-[1240px] px-6 pb-20 pt-32 sm:pb-24 sm:pt-36">
+        <div className="relative z-10 mx-auto max-w-[1240px] px-6 pb-20 pt-32 sm:pb-24 sm:pt-36">
           {/* Breadcrumbs */}
           <nav
             aria-label="Breadcrumbs"

@@ -149,12 +149,12 @@ function Index() {
       <Header />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-navy-deep">
+      <section className="page-hero relative bg-navy-deep">
         <img
           src={heroBg.url}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-right"
+          className="absolute inset-0 h-full w-full object-cover object-[72%_center] sm:object-right"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-transparent" />
 
