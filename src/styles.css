@@ -184,3 +184,19 @@
 @utility card-elevate {
   box-shadow: var(--shadow-card);
 }
+
+@utility page-hero {
+  min-height: clamp(32rem, 62vw, 42rem);
+  background-size: cover;
+  background-position: 72% center;
+  background-repeat: no-repeat;
+  overflow: clip;
+  isolation: isolate;
+}
+
+@media (max-width: 767px) {
+  .page-hero {
+    min-height: 38rem;
+    background-position: 68% center;
+  }
+}
