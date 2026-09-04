@@ -186,17 +186,17 @@
 }
 
 @utility page-hero {
-  min-height: clamp(32rem, 62vw, 42rem);
+  min-height: clamp(22rem, 31vw, 28rem);
   background-size: cover;
   background-position: 72% center;
   background-repeat: no-repeat;
-  overflow: clip;
+  overflow: hidden;
   isolation: isolate;
 }
 
 @media (max-width: 767px) {
   .page-hero {
-    min-height: 38rem;
+    min-height: 30rem;
     background-position: 68% center;
   }
 }
