@@ -15,9 +15,9 @@ import {
 
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { TurkiyeMap } from "@/components/site/TurkiyeMap";
 import heroBg from "@/assets/hero-bg.png.asset.json";
 import logo from "@/assets/logd-logo.png.asset.json";
-import trMap from "@/assets/turkiye-map.png.asset.json";
 import p1 from "@/assets/project-1.jpg.asset.json";
 import p2 from "@/assets/project-2.jpg.asset.json";
 import p3 from "@/assets/project-3.jpg.asset.json";
